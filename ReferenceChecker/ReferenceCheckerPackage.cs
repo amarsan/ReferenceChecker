@@ -53,7 +53,7 @@ namespace CareEvolution.ReferenceChecker
 		/// tool window. See the Initialize method to see how the menu item is associated to 
 		/// this function using the OleMenuCommandService service and the MenuCommand class.
 		/// </summary>
-		private void ShowToolWindow( object sender, EventArgs e )
+		private void ShowToolWindow( object sender, EventArgs eventArgs )
 		{
 			// Get the instance number 0 of this tool window. This window is single instance so this instance
 			// is actually the only one.
@@ -66,9 +66,12 @@ namespace CareEvolution.ReferenceChecker
 
 			// Instantiate a view model
 			var solution = (Solution4)_dteObject.Solution;
-			var viewModel = new MyControlViewModel( solution );
-			var control = (MyControl)( (MyToolWindow)window ).Content;
-			control.DataContext = viewModel;
+			if ( solution != null )
+			{
+				var viewModel = new MyControlViewModel( solution );
+				var control = (MyControl)( (MyToolWindow)window ).Content;
+				control.DataContext = viewModel;
+			}
 
 			IVsWindowFrame windowFrame = (IVsWindowFrame)window.Frame;
 			Microsoft.VisualStudio.ErrorHandler.ThrowOnFailure( windowFrame.Show() );
@@ -96,8 +99,9 @@ namespace CareEvolution.ReferenceChecker
 			{
 				// Create the command for the menu item.
 				CommandID menuCommandID = new CommandID( GuidList.guidReferenceCheckerCmdSet, (int)PkgCmdIDList.cmdidCheckReferences );
-				MenuCommand menuItem = new MenuCommand( MenuItemCallback, menuCommandID );
+				MenuCommand menuItem = new MenuCommand( ShowToolWindow, menuCommandID );
 				mcs.AddCommand( menuItem );
+
 				// Create the command for the tool window
 				CommandID toolwndCommandID = new CommandID( GuidList.guidReferenceCheckerCmdSet, (int)PkgCmdIDList.cmdidReferenceCheckerWindow );
 				MenuCommand menuToolWin = new MenuCommand( ShowToolWindow, toolwndCommandID );
@@ -105,31 +109,6 @@ namespace CareEvolution.ReferenceChecker
 			}
 		}
 		#endregion
-
-		/// <summary>
-		/// This function is the callback used to execute a command when the a menu item is clicked.
-		/// See the Initialize method to see how the menu item is associated to this function using
-		/// the OleMenuCommandService service and the MenuCommand class.
-		/// </summary>
-		private void MenuItemCallback( object sender, EventArgs e )
-		{
-			// Show a Message Box to prove we were here
-			IVsUIShell uiShell = (IVsUIShell)GetService( typeof( SVsUIShell ) );
-			Guid clsid = Guid.Empty;
-			int result;
-			Microsoft.VisualStudio.ErrorHandler.ThrowOnFailure( uiShell.ShowMessageBox(
-					   0,
-					   ref clsid,
-					   "ReferenceChecker",
-					   string.Format( CultureInfo.CurrentCulture, "Inside {0}.MenuItemCallback()", this.ToString() ),
-					   string.Empty,
-					   0,
-					   OLEMSGBUTTON.OLEMSGBUTTON_OK,
-					   OLEMSGDEFBUTTON.OLEMSGDEFBUTTON_FIRST,
-					   OLEMSGICON.OLEMSGICON_INFO,
-					   0,        // false
-					   out result ) );
-		}
 
 		private DTE _dteObject;
 

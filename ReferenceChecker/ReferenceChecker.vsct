@@ -44,8 +44,11 @@
       <Group guid="guidReferenceCheckerCmdSet" id="MyMenuGroup" priority="0x0600">
         <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS"/>
       </Group>
-      
 
+      <Group guid="guidReferenceCheckerCmdSet"
+             id="cmdidCheckReferencesSolutionContextMenu" priority="0xF000">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_SOLNNODE"/>
+      </Group>
 
     </Groups>
     
@@ -65,7 +68,7 @@
         <Parent guid="guidReferenceCheckerCmdSet" id="MyMenuGroup" />
         <Icon guid="guidImages" id="bmpPic1" />
         <Strings>
-          <ButtonText>Check References</ButtonText>
+          <ButtonText>Check Solution References</ButtonText>
         </Strings>
       </Button>
 
@@ -78,6 +81,14 @@
         </Strings>
       </Button>
 
+      <Button guid="guidReferenceCheckerCmdSet" id="cmdidReferenceCheckerWindow" priority="0x0100" type="Button">
+        <Parent guid="guidReferenceCheckerCmdSet" id="cmdidCheckReferencesSolutionContextMenu" />
+        <Icon guid="guidImages" id="bmpPicStrikethrough" />
+        <Strings>
+          <ButtonText>Check Solution References</ButtonText>
+        </Strings>
+      </Button>
+      
 
     </Buttons>
    
@@ -108,6 +119,7 @@
       <IDSymbol name="MyMenuGroup" value="0x1020" />
       <IDSymbol name="cmdidCheckReferences" value="0x0100" />
       <IDSymbol name="cmdidReferenceCheckerWindow" value="0x0101" />
+      <IDSymbol name="cmdidCheckReferencesSolutionContextMenu" value="0x0190"/>
     </GuidSymbol>
     
     
