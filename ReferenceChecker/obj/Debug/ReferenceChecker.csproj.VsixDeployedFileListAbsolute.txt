@@ -1,9 +1,0 @@
-C:\Users\amarsan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\CareEvolution\ReferenceChecker\1.0\\ReferenceChecker.dll
-C:\Users\amarsan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\CareEvolution\ReferenceChecker\1.0\\VSLangProj.dll
-C:\Users\amarsan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\CareEvolution\ReferenceChecker\1.0\\VSLangProj100.dll
-C:\Users\amarsan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\CareEvolution\ReferenceChecker\1.0\\VSLangProj2.dll
-C:\Users\amarsan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\CareEvolution\ReferenceChecker\1.0\\VSLangProj80.dll
-C:\Users\amarsan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\CareEvolution\ReferenceChecker\1.0\\VSLangProj90.dll
-C:\Users\amarsan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\CareEvolution\ReferenceChecker\1.0\\ReferenceChecker.pkgdef
-C:\Users\amarsan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\CareEvolution\ReferenceChecker\1.0\\extension.vsixmanifest
-C:\Users\amarsan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\CareEvolution\ReferenceChecker\1.0\\ReferenceChecker.pdb
