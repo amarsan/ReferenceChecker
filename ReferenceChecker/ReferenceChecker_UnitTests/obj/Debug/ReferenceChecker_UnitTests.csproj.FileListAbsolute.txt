@@ -1,0 +1,10 @@
+c:\users\amarsan\documents\visual studio 2013\Projects\ReferenceChecker\ReferenceChecker\ReferenceChecker_UnitTests\bin\Debug\ReferenceChecker_UnitTests.dll
+c:\users\amarsan\documents\visual studio 2013\Projects\ReferenceChecker\ReferenceChecker\ReferenceChecker_UnitTests\bin\Debug\ReferenceChecker_UnitTests.pdb
+c:\users\amarsan\documents\visual studio 2013\Projects\ReferenceChecker\ReferenceChecker\ReferenceChecker_UnitTests\bin\Debug\Microsoft.VSSDK.TestHostFramework.dll
+c:\users\amarsan\documents\visual studio 2013\Projects\ReferenceChecker\ReferenceChecker\ReferenceChecker_UnitTests\bin\Debug\Microsoft.VSSDK.UnitTestLibrary.dll
+c:\users\amarsan\documents\visual studio 2013\Projects\ReferenceChecker\ReferenceChecker\ReferenceChecker_UnitTests\bin\Debug\ReferenceChecker.dll
+c:\users\amarsan\documents\visual studio 2013\Projects\ReferenceChecker\ReferenceChecker\ReferenceChecker_UnitTests\bin\Debug\ReferenceChecker.pdb
+c:\users\amarsan\documents\visual studio 2013\Projects\ReferenceChecker\ReferenceChecker\ReferenceChecker_UnitTests\bin\Debug\Microsoft.VSSDK.TestHostFramework.pdb
+c:\users\amarsan\documents\visual studio 2013\Projects\ReferenceChecker\ReferenceChecker\ReferenceChecker_UnitTests\obj\Debug\ReferenceChecker_UnitTests.csprojResolveAssemblyReference.cache
+c:\users\amarsan\documents\visual studio 2013\Projects\ReferenceChecker\ReferenceChecker\ReferenceChecker_UnitTests\obj\Debug\ReferenceChecker_UnitTests.dll
+c:\users\amarsan\documents\visual studio 2013\Projects\ReferenceChecker\ReferenceChecker\ReferenceChecker_UnitTests\obj\Debug\ReferenceChecker_UnitTests.pdb

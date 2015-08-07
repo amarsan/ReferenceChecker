@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="CareEvolution.ReferenceChecker.MyControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             Background="{DynamicResource VsBrush.Window}"
+             Foreground="{DynamicResource VsBrush.WindowText}"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300"
+             Name="ReferenceCheckerWindow">
+
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    </UserControl.Resources>
+
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="350" />
+        </Grid.ColumnDefinitions>
+        <ListBox Grid.Column="0" ItemsSource="{Binding References}" SelectedItem="{Binding SelectedItem}" HorizontalAlignment="Stretch">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Height="25" Margin="2" HorizontalAlignment="Stretch">
+                        <TextBlock Margin="2" FontWeight="Bold" Text="{Binding Name}" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <!-- Details -->
+        <Grid Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="{Binding ItemSelected, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Orientation="Vertical">
+                <TextBlock Margin="5,5,5,0" Text="Version:" FontWeight="Bold" />
+                <TextBlock Margin="5,2,5,0" Text="{Binding SelectedItem.Version}" />
+                <TextBlock Margin="5,10,5,0" Text="Description:" FontWeight="Bold" />
+                <TextBlock Margin="5,2,5,0" Text="{Binding SelectedItem.Description}" TextWrapping="Wrap" />
+                <TextBlock Margin="5,10,5,0" Text="Location:" FontWeight="Bold" />
+                <TextBlock Margin="5,2,5,0" Text="{Binding SelectedItem.Location}" TextWrapping="Wrap" />
+                <TextBlock Margin="5,20,5,0" Text="Currently installed in projects:" FontWeight="Bold" HorizontalAlignment="Stretch" />
+            </StackPanel>
+            <ScrollViewer Grid.Row="1" Margin="5,2,5,5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Auto">
+                <ItemsControl ItemsSource="{Binding SelectedItem.ProjectNames}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Margin="10,0,0,0" Text="{Binding}" HorizontalAlignment="Stretch"></TextBlock>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Vertical" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</UserControl>

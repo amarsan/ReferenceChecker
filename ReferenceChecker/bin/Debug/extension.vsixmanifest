@@ -1,0 +1,17 @@
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011">
+  <Metadata>
+    <Identity Id="a24d4dca-b6e5-45f3-b15f-775669cb3421" Version="1.0" Language="en-US" Publisher="CareEvolution" />
+    <DisplayName>ReferenceChecker</DisplayName>
+    <Description>This tool shows all of the references and their versions for all of the projects in a solution.</Description>
+  </Metadata>
+  <Installation InstalledByMsi="false">
+    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[12.0]" />
+  </Installation>
+  <Dependencies>
+    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" Version="[4.5,)" />
+    <Dependency Id="Microsoft.VisualStudio.MPF.12.0" DisplayName="Visual Studio MPF 12.0" Version="[12.0]" />
+  </Dependencies>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="ReferenceChecker.pkgdef" />
+  </Assets>
+</PackageManifest>
